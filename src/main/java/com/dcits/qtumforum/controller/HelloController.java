@@ -1,0 +1,45 @@
+package com.dcits.qtumforum.controller;
+
+import com.dcits.qtumforum.provider.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.servlet.http.HttpServletRequest;
+@Controller
+public class HelloController {
+    @Autowired
+    private AliProvider aliProvider;
+
+    @Autowired
+    private TinifyProvider tinifyProvider;
+
+    @Autowired
+    private QCloudProvider qCloudProvider;
+
+    @Autowired
+    private QqProvider qqProvider;
+
+    @Autowired
+    private BaiduCloudProvider baiduCloudProvider;
+
+    @Value("${qcloud.keywords.enable}")
+    private int keywordsEnable;
+
+    @GetMapping("/hello")
+    public String hello(HttpServletRequest request, Model model) {
+        //String encodekey = DigestUtils.sha256Hex("测试SHA256"+"adsdsad");
+        //System.out.println(encodekey);
+        try {
+            JiGuangProvider.test();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "other/video2";
+    }
+
+
+
+}
