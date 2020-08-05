@@ -74,24 +74,25 @@ CREATE TABLE `qtum_forum_comment` (
 CREATE TABLE `qtum_forum_news` (
   `news_id` bigint(20) NOT NULL COMMENT '主键',
   `id` varchar(40) DEFAULT NULL,
-  `title` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+  `title` varchar(256) CHARACTER SET utf8mb4 NOT NULL,
   `description` text CHARACTER SET utf8mb4 NOT NULL,
   `html` text CHARACTER SET utf8mb4 NOT NULL,
   `source` varchar(16) NOT NULL,
-  `link` varchar(64) NOT NULL,
-  `pub_date` varchar(24) NOT NULL,
-  `imageurl1` varchar(128) DEFAULT NULL,
-  `imageurl2` varchar(128) DEFAULT NULL,
-  `imageurl3` varchar(128) DEFAULT NULL,
+  `link` varchar(256) NOT NULL,
+  `pub_date` TIMESTAMP NOT NULL,
+  `imageurl1` varchar(256) DEFAULT NULL,
+  `imageurl2` varchar(256) DEFAULT NULL,
+  `imageurl3` varchar(256) DEFAULT NULL,
   `tag` varchar(128) DEFAULT NULL,
   `view_count` int(11) NOT NULL DEFAULT '0',
   `comment_count` int(11) NOT NULL DEFAULT '0',
   `like_count` int(11) NOT NULL DEFAULT '0',
-  `gmt_latest_comment` bigint(20) NOT NULL,
+  `gmt_latest_comment` TIMESTAMP NOT NULL,
   `status` int(2) NOT NULL DEFAULT '1',
   `column2` int(2) NOT NULL DEFAULT '0',
-  `gmt_create` bigint(20) NOT NULL,
-  `gmt_modified` bigint(20) NOT NULL
+  `gmt_create` TIMESTAMP NOT NULL,
+  `gmt_modified` TIMESTAMP NOT NULL,
+  `relate_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -274,7 +275,9 @@ ALTER TABLE `qtum_forum_comment`
 -- Indexes for table `news`
 --
 ALTER TABLE `qtum_forum_news`
-  ADD PRIMARY KEY (`news_id`);
+  ADD PRIMARY KEY (`news_id`),
+  ADD UNIQUE KEY `link` (`link`);
+
 
 --
 -- Indexes for table `notification`
@@ -333,8 +336,11 @@ ALTER TABLE `qtum_forum_comment`
 -- 使用表AUTO_INCREMENT `news`
 --
 ALTER TABLE `qtum_forum_news`
-  MODIFY `news_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键', AUTO_INCREMENT=485;
-
+  MODIFY `news_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键', AUTO_INCREMENT=485,
+  MODIFY `pub_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  MODIFY `gmt_latest_comment` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  MODIFY `gmt_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  MODIFY `gmt_modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 --
 -- 使用表AUTO_INCREMENT `notification`
 --

@@ -39,7 +39,7 @@
             <li class="layui-nav-item">
                 <a></a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/news"><i class="layui-icon">&#xe705;</i>看看</a></dd>
+                    <dd><a href="/news"><i class="layui-icon">&#xe705;</i>量子资讯</a></dd>
                     <dd><a href="/chat"><i class="iconfont icon-jiaoliu"></i>聊聊</a></dd>
                     <dd><a th:href="${@environment.getProperty('site.info.contactQunUrl')}" target="_blank"><i class="layui-icon">&#xe770;</i>官方群</a></dd>
                     <!--dd><a href="/dev"><i class="iconfont icon-iconmingxinganli"></i>实验室</a></dd-->
@@ -58,19 +58,19 @@
               <a href="/dev"><i class="iconfont icon-iconmingxinganli"></i>实验室</a>
             </li-->
             <li th:class="${'newsnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
-                <a href="/news"><i class="layui-icon">&#xe705;</i>资讯</a>
+                <a href="/news"><i class="layui-icon">&#xe705;</i>量子资讯</a>
             </li>
-            <li th:class="${'chatnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">
-                <a href="/chat"><i class="iconfont icon-jiaoliu"></i>聊聊</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="https://github.com/yourkevin/NiterForum/" target="_blank"><i class="layui-icon">&#xe635;</i>源码</a>
-                <dl class="layui-nav-child">
-                    <dd><a target="_blank" href="https://gitee.com/yourkevin/NiterForum/"><i><img src="/images/gitee120c.png" style="height: 28px"></i>Gitee</a></dd>
-                    <dd><a target="_blank" href="https://github.com/yourkevin/NiterForum/"><i><img src="/images/github120c.png" style="height: 28px"></i>Github</a></dd>
-                    <dd><a target="_blank" href="https://api-1251590924.cos.ap-nanjing.myqcloud.com/qrcode/index.html"><i class="layui-icon" style="font-size: 30px; color: #ffdd11;">&#xe65e;</i>打赏</a></dd>
-                </dl>
-            </li>
+<!--            <li th:class="${'chatnav' == navtype}? 'layui-nav-item layui-this' : 'layui-nav-item'">-->
+<!--                <a href="/chat"><i class="iconfont icon-jiaoliu"></i>聊聊</a>-->
+<!--            </li>-->
+<!--            <li class="layui-nav-item">-->
+<!--                <a href="https://github.com/yourkevin/NiterForum/" target="_blank"><i class="layui-icon">&#xe635;</i>源码</a>-->
+<!--                <dl class="layui-nav-child">-->
+<!--                    <dd><a target="_blank" href="https://gitee.com/yourkevin/NiterForum/"><i><img src="/images/gitee120c.png" style="height: 28px"></i>Gitee</a></dd>-->
+<!--                    <dd><a target="_blank" href="https://github.com/yourkevin/NiterForum/"><i><img src="/images/github120c.png" style="height: 28px"></i>Github</a></dd>-->
+<!--                    <dd><a target="_blank" href="https://api-1251590924.cos.ap-nanjing.myqcloud.com/qrcode/index.html"><i class="layui-icon" style="font-size: 30px; color: #ffdd11;">&#xe65e;</i>打赏</a></dd>-->
+<!--                </dl>-->
+<!--            </li>-->
             <!--li class="layui-nav-item">
               <a th:href="${@environment.getProperty('site.info.contactQunUrl')}" target="_blank"><i class="layui-icon">&#xe770;</i>联系</a>
             </li-->
@@ -209,13 +209,13 @@
     <div class="layui-container">
         <ul class="layui-clear">
             <li th:class="${column == null||column == 0}? 'layui-this' : ''"><a href="/news">全部</a></li>
-            <li th:class="${column == 1}? 'layui-this' : ''"><a href="/news?column=1">互联网</a></li>
-            <li th:class="${column == 2}? 'layui-this' : ''"><a href="/news?column=2">科技</a></li>
-            <li th:class="${column == 3}? 'layui-this' : ''"><a href="/news?column=3">电脑</a></li>
-            <li th:class="${column == 4}? 'layui-this' : ''"><a href="/news?column=4">数码
+            <li th:class="${column == 1}? 'layui-this' : ''"><a href="/news?column=1">量子计算</a></li>
+            <li th:class="${column == 2}? 'layui-this' : ''"><a href="/news?column=2">量子通信</a></li>
+            <li th:class="${column == 3}? 'layui-this' : ''"><a href="/news?column=3">量子物理</a></li>
+            <li th:class="${column == 4}? 'layui-this' : ''"><a href="/news?column=4">量子理论
 <!--                <span class="layui-badge-dot"></span>-->
             </a></li>
-            <li th:class="${column == 5}? 'layui-this' : ''"><a href="/news?column=5">科普</a></li>
+            <li th:class="${column == 5}? 'layui-this' : ''"><a href="/news?column=5">量子模拟</a></li>
             <li th:class="${column == 6}? 'layui-this' : ''"><a href="/news?column=6">体育</a></li>
             <li th:class="${column == 7}? 'layui-this' : ''"><a href="/news?column=7">娱乐</a></li>
             <li th:class="${column == 8}? 'layui-this' : ''"><a href="/news?column=8">国内</a></li>
