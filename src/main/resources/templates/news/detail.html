@@ -23,14 +23,14 @@
                 <h1 th:text="${news.title}"></h1>
                 <div class="fly-detail-info">
                     <!-- <span class="layui-badge">审核中</span> -->
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==1}">量子计算</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==2}">量子通信</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==1}">量子通信</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==2}">量子计算</a>
                     <a class="layui-badge layui-bg-green" th:if="${news.column2==3}">量子物理</a>
                     <a class="layui-badge layui-bg-green" th:if="${news.column2==4}">量子理论</a>
                     <a class="layui-badge layui-bg-green" th:if="${news.column2==5}">量子模拟</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==6}">体育</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==7}">娱乐</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==8}">国内</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==6}">量子测量</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==7}">密码学</a>
+<!--                    <a class="layui-badge layui-bg-green" th:if="${news.column2==8}">国内</a>-->
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回复">&#xe60c;</i><span th:text="${news.commentCount}"></span></a>
             <i class="iconfont" title="浏览">&#xe60b;</i><span th:text="${news.viewCount}"></span>
