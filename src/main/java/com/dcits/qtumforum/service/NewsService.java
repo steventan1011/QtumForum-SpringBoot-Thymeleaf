@@ -29,7 +29,6 @@ public class NewsService {
     @Autowired
     private NewsExtMapper newsExtMapper;
 
-
     public NewsDTO getById(Long id) {
         News news = newsMapper.selectByPrimaryKey(id);
         if (news == null) {

@@ -42,6 +42,7 @@ public class NewsDTO {
     private Integer status;
     private Integer column2;
     private String columnStr;
-    //private Integer permission;
+
+
 
 }

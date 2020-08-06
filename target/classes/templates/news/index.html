@@ -156,13 +156,16 @@
                         /*if(item.permission==0)
                             str = str +"<p>"+item.shortDescription+"</p>\n" ;
                         else if(item.isVisible==1)//权限控制，没有权限的用户不显示页面*/
+
                             str = str +"<p>"+item.description+"<a target='_blank' href=\"/news/"+item.newsId+"\" title=\""+item.title+"\" class='fly-link'>全文</a></p>" ;
+
+                            // str = str +"<p>"+item.description+"<br target='_blank' href=\"/news/"+item.newsId+"\" title=\""+item.title+"\" class='fly-link'>全文</a></p>" ;
                             if(item.imageurl1!=null)
-                            str = str +"<img src=\""+item.imageurl1+"\">" ;
+                            str = str +"<img src=\""+item.imageurl1+"\" width='33%'>" ;
                         if(item.imageurl2!=null)
-                            str = str +"<img src=\""+item.imageurl2+"\">" ;
+                            str = str +"<img src=\""+item.imageurl2+"\" width='33%'>" ;
                         if(item.imageurl3!=null)
-                            str = str +"<img src=\""+item.imageurl3+"\">" ;
+                            str = str +"<img src=\""+item.imageurl3+"\" width='33%'>" ;
                         str = str+"</div> ";
                         str = str +" </div>\n" +
                             "          </li>";

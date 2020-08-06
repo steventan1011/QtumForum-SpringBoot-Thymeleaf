@@ -94,9 +94,9 @@ public class PhoneController {
             Boolean is_valid = obj.getBoolean("is_valid");
             if(is_valid){
                 if("1".equals(state)){//绑定
-                UserDTO user = (UserDTO) request.getAttribute("loginUser");
-                Long id = user.getId();
-                return userService.updateUserPhoneById(id,phone);
+                    UserDTO user = (UserDTO) request.getAttribute("loginUser");
+                    Long id = user.getId();
+                    return userService.updateUserPhoneById(id,phone);
                 }
                 if("2".equals(state)){//注册、登录
                     ResultDTO resultDTO = (ResultDTO)userService.registerOrLoginWithPhone(phone,password);

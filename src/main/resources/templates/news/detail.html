@@ -23,14 +23,14 @@
                 <h1 th:text="${news.title}"></h1>
                 <div class="fly-detail-info">
                     <!-- <span class="layui-badge">审核中</span> -->
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==1}">互联网</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==2}">科技</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==3}">电脑</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==4}">数码</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==5}">科普</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==6}">体育</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==7}">娱乐</a>
-                    <a class="layui-badge layui-bg-green" th:if="${news.column2==8}">国内</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==1}">量子通信</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==2}">量子计算</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==3}">量子物理</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==4}">量子理论</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==5}">量子模拟</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==6}">量子测量</a>
+                    <a class="layui-badge layui-bg-green" th:if="${news.column2==7}">密码学</a>
+<!--                    <a class="layui-badge layui-bg-green" th:if="${news.column2==8}">国内</a>-->
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回复">&#xe60c;</i><span th:text="${news.commentCount}"></span></a>
             <i class="iconfont" title="浏览">&#xe60b;</i><span th:text="${news.viewCount}"></span>
@@ -39,12 +39,12 @@
                 <div class="detail-about">
                     <a class="fly-avatar niter-avatar" th:href="${'/news?column='+news.column2}">
                         <img th:src="${'/images/avatar/news/'+news.column2+'.jpg'}"
-                             th:alt="${news.columnStr+'资讯'}">
+                             th:alt="${news.columnStr}">
                     </a>
                     <div class="fly-detail-user">
                         <a th:href="${news.link}" class="fly-link" target="_blank">
                             <cite th:text="${news.source}"></cite>
-                            <i class="layui-badge fly-badge-vip layui-bg-gray" th:text="${news.columnStr+'资讯'}"></i>
+                            <i class="layui-badge fly-badge-vip layui-bg-gray" th:text="${news.columnStr}"></i>
                         </a>
                         <span th:text="${'发布于 '+news.pubDate}"></span>
                     </div>
@@ -57,6 +57,7 @@
                     <a class="layui-btn layui-btn-radius layui-btn-primary layui-btn-fluid" href="javascript:downloadApp()" style="color: red">打开或者下载<i class="layui-icon">&#xe63b;</i>APP，畅享极致体验</a>
                 </div>
                 <div style="margin-top: 20px;margin-bottom: 20px" class="layui-text layui-table video photos" id="descriptionP" th:text="${news.html}">
+                <div th:replace="~{common/sidebar::sidebar}"></div>
                 </div>
                 <div th:if="${news.tag!=null&&news.tag!=''}" style="margin-top: 10px">
                     相关标签：
@@ -89,7 +90,7 @@
     function myPlusShare() {
         window.plusShare({
             title: document.title,//应用名字
-            content: '我在尼特IT看到一篇新鲜的资讯《'+document.title+'》，你也来看看吧！--- ',
+            content: '我在量子社区看到一篇新鲜的资讯《'+document.title+'》，你也来看看吧！--- ',
             href: location.href,//分享出去后，点击跳转地址
             thumbs: ["https://niter.cn/images/N80.png"] //分享缩略图
         }, function(result) {
